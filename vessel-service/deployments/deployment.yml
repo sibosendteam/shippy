@@ -1,0 +1,31 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: vessel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vessel
+  template:
+    metadata:
+      labels:
+        app: vessel
+    spec:
+        containers:
+        - name: vessel-service
+          image: sibosend/vessel-service:latest
+          imagePullPolicy: Never
+          command: [
+            "./vessel-service",
+            "--selector=static",
+            "--server_address=:8080"
+          ]
+          env:
+          - name: DB_HOST
+            value: "mongo:27017"
+          - name: UPDATED_AT
+            value: "2019年 7月15日 星期一 17时55分33秒 CST"
+          ports:
+          - containerPort: 8080
+            name: vessel-port

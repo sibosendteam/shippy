@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: email
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email
+  template:
+    metadata:
+      labels:
+        app: email
+    spec:
+      containers:
+        - name: email-service
+          image: sibosend/email-service:latest
+          imagePullPolicy: Never
+          command: [
+            "./email-service",
+            "--selector=static",
+            "--server_address=:8080"
+          ]
+          ports:
+            - containerPort: 8080
+              name: email-port

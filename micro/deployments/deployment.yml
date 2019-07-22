@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: micro
+  template:
+    metadata:
+      labels:
+        app: micro
+    spec:
+      containers:
+        - name: micro
+          image: sibosend/micro:latest
+          imagePullPolicy: Never
+          args:
+            - "api"
+            - "--handler=rpc"
+          env:
+            - name: MICRO_API_ADDRESS
+              value: ":8002"
+            - name: CORS_ALLOWED_HEADERS
+              value: "*"
+            - name: CORS_ALLOWED_ORIGINS
+              value: "*"
+            - name: CORS_ALLOWED_METHODS
+              value: "POST,GET,OPTIONS"
+          ports:
+            - containerPort: 8002
+              name: port
