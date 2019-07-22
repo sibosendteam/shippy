@@ -12,4 +12,4 @@ run:
 
 deploy:
 	sed "s/{{ UPDATED_AT }}/$(shell date)/g" ./deployments/deployment.tmpl > ./deployments/deployment.yml
-	kubectl replace -f ./deployments/deployment.yml
+	kubectl apply -f ./deployments/deployment.yml

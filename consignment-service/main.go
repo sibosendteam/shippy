@@ -57,7 +57,7 @@ func main() {
 		micro.WrapHandler(AuthWrapper),
 	)
 
-	vesselClient := vesselProto.NewVesselServiceClient("go.micro.srv.vessel", srv.Client())
+	vesselClient := vesselProto.NewVesselServiceClient("vessel", srv.Client())
 
 	// Init will parse the command line flags.
 	srv.Init()

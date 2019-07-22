@@ -17,7 +17,7 @@ class CreateConsignment extends React.Component {
 
   componentWillMount() {
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:8002/rpc`, {
+    fetch(`http://192.168.0.124:8002/rpc`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -41,7 +41,7 @@ class CreateConsignment extends React.Component {
   create = () => {
     const consignment = this.state;
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:8002/rpc`, {
+    fetch(`http://192.168.0.124:8002/rpc`, {
       method: 'POST',
       mode: 'cors',
       headers: {
