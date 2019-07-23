@@ -3,7 +3,7 @@ build:
 	docker build -t sibosend/micro .
 
 run:
-	docker run sibosend/micro api --handler=rpc --namespace=shippy --cors-allowed-origins=*
+	docker run sibosend/micro api --handler=rpc --namespace=shippy --cors-allowed-headers=* --cors-allowed-origins=* --cors-allowed-methods=*
 
 deploy:
 	sed "s/{{ UPDATED_AT }}/$(shell date)/g" ./deployments/deployment.tmpl > ./deployments/deployment.yml

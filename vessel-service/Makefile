@@ -8,7 +8,7 @@ run:
 	docker run -d --net="host" \
 		-e MICRO_SERVER_ADDRESS=:50053 \
 		-e MICRO_REGISTRY=mdns \
-		vessel-service
+		sibosend/vessel-service
 
 deploy:
 	sed "s/{{ UPDATED_AT }}/$(shell date)/g" ./deployments/deployment.tmpl > ./deployments/deployment.yml

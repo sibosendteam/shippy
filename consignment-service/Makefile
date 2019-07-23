@@ -10,7 +10,7 @@ run:
 		-e MICRO_SERVER_ADDRESS=:50052 \
 		-e MICRO_REGISTRY=mdns \
 		-e DISABLE_AUTH=true \
-		consignment-service
+		sibosend/consignment-service
 
 deploy:
 	sed "s/{{ UPDATED_AT }}/$(shell date)/g" ./deployments/deployment.tmpl > ./deployments/deployment.yml

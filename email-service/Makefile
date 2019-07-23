@@ -6,7 +6,7 @@ run:
 	docker run --net="host" \
 		-e MICRO_SERVER_ADDRESS=:50054 \
 		-e MICRO_REGISTRY=mdns \
-		email-service
+		sibosend/email-service
 
 deploy:
 	sed "s/{{ UPDATED_AT }}/$(shell date)/g" ./deployments/deployment.tmpl > ./deployments/deployment.yml
