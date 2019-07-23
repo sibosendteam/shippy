@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   login = () => {
-    fetch(`http://192.168.0.124:8002/rpc`, {
+    fetch(`http://localhost:8002/rpc`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   signup = () => {
-    fetch(`http://192.168.0.124:8002/rpc`, {
+    fetch(`http://localhost:8002/rpc`, {
       method: 'POST',
       mode: 'cors',
       headers: {
