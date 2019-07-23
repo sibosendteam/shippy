@@ -62,9 +62,9 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 
 ## Deploy Services
 
-   - [Deploy Mongodb](#install-docker)
-   - [Deploy Postgresql](#install-kubernetes)
-   - [Deploy Vessel Service](#deploy-services)
+   - [Deploy Mongodb](https://github.com/sibosendteam/shippy/blob/master/infrastructure/mongodb-README.md)
+   - [Deploy Postgresql](https://github.com/sibosendteam/shippy/blob/master/infrastructure/postgres-README.md)
+   - [Deploy Vessel Service](#https://github.com/sibosendteam/shippy/blob/master/vessel-service/README.md)
    - [Deploy User Service](#)
    - [Deploy Email Service](#)
    - [Deploy Consignment Service](#)
